@@ -15,6 +15,8 @@ class StorefrontVC: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        IAPService.instance.delegate = self
     }
 
     @IBAction func restoreBtnWasPressed(_ sender: Any) {
@@ -44,3 +46,16 @@ extension StorefrontVC: UICollectionViewDelegate, UICollectionViewDataSource {
         present(detailsVC, animated: true, completion: nil)
     }
 }
+
+extension StorefrontVC: IAPServiceDelegate {
+    func iapProductsLoaded() {
+        print("IAP PRoducts loaded")
+    }
+}
+
+
+
+
+
+
+

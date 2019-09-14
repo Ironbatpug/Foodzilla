@@ -9,14 +9,42 @@
 import Foundation
 import StoreKit
 
-class IAPService: NSOBject, SKProductsRequestDelegate {
+protocol IAPServiceDelegate {
+    func iapProductsLoaded()
+}
+
+class IAPService: NSObject, SKProductsRequestDelegate {
     static let instance = IAPService()
     
+     var delegate: IAPServiceDelegate?
+    
+    var products = [SKProduct]()
+    var productIDs = Set<String>()
+    var produtRequest = SKProductsRequest()
+    
     func loadProducts() {
-        
+        productIdToStringSet()
+        requestProducts(forIds: productIDs)
+    }
+    
+    func productIdToStringSet(){
+        productIDs.insert(IAP_MEAL_ID)
+    }
+    
+    func requestProducts(forIds ids: Set<String>) {
+        produtRequest.cancel()
+        produtRequest = SKProductsRequest(productIdentifiers: productIDs)
+        produtRequest.delegate = self
+        produtRequest.start()
     }
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        <#code#>
+        self.products = response.products
+        
+        if products.count == 0 {
+            requestProducts(forIds: productIDs)
+        } else {
+            delegate?.iapProductsLoaded()
+        }
     }
 }
