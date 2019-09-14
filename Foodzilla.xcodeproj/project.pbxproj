@@ -12,6 +12,8 @@
 		75C27F1E232CFB1400888DB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75C27F1C232CFB1400888DB6 /* Main.storyboard */; };
 		75C27F20232CFB1600888DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75C27F1F232CFB1600888DB6 /* Assets.xcassets */; };
 		75C27F23232CFB1600888DB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75C27F21232CFB1600888DB6 /* LaunchScreen.storyboard */; };
+		75C27F2C232D0B0C00888DB6 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F2B232D0B0C00888DB6 /* DetailsVC.swift */; };
+		75C27F32232D17CE00888DB6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F31232D17CE00888DB6 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		75C27F1F232CFB1600888DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75C27F22232CFB1600888DB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75C27F24232CFB1600888DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75C27F2B232D0B0C00888DB6 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		75C27F31232D17CE00888DB6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,10 @@
 		75C27F17232CFB1400888DB6 /* Foodzilla */ = {
 			isa = PBXGroup;
 			children = (
+				75C27F30232D16E200888DB6 /* Enums */,
+				75C27F2F232D16D900888DB6 /* Extensions */,
+				75C27F2E232D16D100888DB6 /* Model */,
+				75C27F2D232D16C300888DB6 /* View */,
 				75C27F2A232D03B600888DB6 /* Controller */,
 				75C27F18232CFB1400888DB6 /* AppDelegate.swift */,
 				75C27F1C232CFB1400888DB6 /* Main.storyboard */,
@@ -68,8 +76,38 @@
 			isa = PBXGroup;
 			children = (
 				75C27F1A232CFB1400888DB6 /* StorefrontVC.swift */,
+				75C27F2B232D0B0C00888DB6 /* DetailsVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		75C27F2D232D16C300888DB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		75C27F2E232D16D100888DB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75C27F31232D17CE00888DB6 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		75C27F2F232D16D900888DB6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		75C27F30232D16E200888DB6 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C27F32232D17CE00888DB6 /* Item.swift in Sources */,
 				75C27F1B232CFB1400888DB6 /* StorefrontVC.swift in Sources */,
+				75C27F2C232D0B0C00888DB6 /* DetailsVC.swift in Sources */,
 				75C27F19232CFB1400888DB6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
