@@ -16,6 +16,7 @@
 		75C27F32232D17CE00888DB6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F31232D17CE00888DB6 /* Item.swift */; };
 		75C27F35232D18C300888DB6 /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F34232D18C300888DB6 /* FoodList.swift */; };
 		75C27F38232D1AE000888DB6 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F37232D1AE000888DB6 /* ItemCell.swift */; };
+		75C27F3A232D22B700888DB6 /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F39232D22B700888DB6 /* IAPService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		75C27F31232D17CE00888DB6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		75C27F34232D18C300888DB6 /* FoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodList.swift; sourceTree = "<group>"; };
 		75C27F37232D1AE000888DB6 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		75C27F39232D22B700888DB6 /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		75C27F17232CFB1400888DB6 /* Foodzilla */ = {
 			isa = PBXGroup;
 			children = (
+				75C27F3B232D22BD00888DB6 /* Services */,
 				75C27F33232D18AD00888DB6 /* Helpers */,
 				75C27F30232D16E200888DB6 /* Enums */,
 				75C27F2F232D16D900888DB6 /* Extensions */,
@@ -122,6 +125,14 @@
 				75C27F34232D18C300888DB6 /* FoodList.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		75C27F3B232D22BD00888DB6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				75C27F39232D22B700888DB6 /* IAPService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 				75C27F1B232CFB1400888DB6 /* StorefrontVC.swift in Sources */,
 				75C27F38232D1AE000888DB6 /* ItemCell.swift in Sources */,
 				75C27F2C232D0B0C00888DB6 /* DetailsVC.swift in Sources */,
+				75C27F3A232D22B700888DB6 /* IAPService.swift in Sources */,
 				75C27F19232CFB1400888DB6 /* AppDelegate.swift in Sources */,
 				75C27F35232D18C300888DB6 /* FoodList.swift in Sources */,
 			);

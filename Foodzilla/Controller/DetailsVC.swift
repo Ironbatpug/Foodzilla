@@ -16,10 +16,18 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var buyItemBtn: UIButton!
     @IBOutlet weak var hideAdsBtn: UIButton!
     
+    public private(set) var item: Item!
+    
+    func initData(forItem item: Item) {
+        self.item = item
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.itemImageView.image = item.image
+        self.itemNameLbl.text = item.name
+        self.itemPriceLbl.text = "\(item.price)"
+        buyItemBtn.setTitle("Buy this item for $\(item.price)", for: .normal)
     }
 
     @IBAction func buyBtnWasPressed(_ sender: Any) {

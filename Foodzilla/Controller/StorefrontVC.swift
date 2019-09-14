@@ -37,4 +37,10 @@ extension StorefrontVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let detailsVC = storyboard?.instantiateViewController(withIdentifier: "detailsVC") as? DetailsVC else { return }
+        detailsVC.initData(forItem: foodItems[indexPath.row])
+        present(detailsVC, animated: true, completion: nil)
+    }
 }
