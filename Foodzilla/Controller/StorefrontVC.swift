@@ -18,7 +18,7 @@ class StorefrontVC: UIViewController {
         
         IAPService.instance.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: <#T##Selector#>, name: NSNotification.Name(IAPServiceRestoreNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showAlert), name: NSNotification.Name(IAPServiceRestoreNotification), object: nil)
     }
 
     @IBAction func restoreBtnWasPressed(_ sender: Any) {
