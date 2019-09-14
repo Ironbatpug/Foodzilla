@@ -8,4 +8,10 @@
 
 import Foundation
 
-let IAP_MEAL_ID = "id"
+let IAP_MEAL_ID = "mealid"
+let IAP_HID_ADS_ID = "hideadsid"
+
+let IAPServicePurchaseNotification = "IAPServicePurchaseNotification"
+let IAPServiceRestoreNotification = "IAPServiceRestoreNotification"
+let IAPServiceFailureNotification = "IAPServiceFailureNotification"
+

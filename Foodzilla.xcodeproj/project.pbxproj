@@ -18,6 +18,8 @@
 		75C27F38232D1AE000888DB6 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F37232D1AE000888DB6 /* ItemCell.swift */; };
 		75C27F3A232D22B700888DB6 /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F39232D22B700888DB6 /* IAPService.swift */; };
 		75C27F3D232D23ED00888DB6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F3C232D23ED00888DB6 /* Constants.swift */; };
+		75C27F3F232D27C000888DB6 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F3E232D27C000888DB6 /* Products.swift */; };
+		75C27F41232D27D000888DB6 /* PurchaseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F40232D27D000888DB6 /* PurchaseStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		75C27F37232D1AE000888DB6 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		75C27F39232D22B700888DB6 /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
 		75C27F3C232D23ED00888DB6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		75C27F3E232D27C000888DB6 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		75C27F40232D27D000888DB6 /* PurchaseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 		75C27F30232D16E200888DB6 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				75C27F3E232D27C000888DB6 /* Products.swift */,
+				75C27F40232D27D000888DB6 /* PurchaseStatus.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -209,6 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C27F41232D27D000888DB6 /* PurchaseStatus.swift in Sources */,
+				75C27F3F232D27C000888DB6 /* Products.swift in Sources */,
 				75C27F32232D17CE00888DB6 /* Item.swift in Sources */,
 				75C27F1B232CFB1400888DB6 /* StorefrontVC.swift in Sources */,
 				75C27F38232D1AE000888DB6 /* ItemCell.swift in Sources */,
