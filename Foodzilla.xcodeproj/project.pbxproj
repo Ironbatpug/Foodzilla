@@ -14,6 +14,8 @@
 		75C27F23232CFB1600888DB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75C27F21232CFB1600888DB6 /* LaunchScreen.storyboard */; };
 		75C27F2C232D0B0C00888DB6 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F2B232D0B0C00888DB6 /* DetailsVC.swift */; };
 		75C27F32232D17CE00888DB6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F31232D17CE00888DB6 /* Item.swift */; };
+		75C27F35232D18C300888DB6 /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F34232D18C300888DB6 /* FoodList.swift */; };
+		75C27F38232D1AE000888DB6 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C27F37232D1AE000888DB6 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		75C27F24232CFB1600888DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75C27F2B232D0B0C00888DB6 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		75C27F31232D17CE00888DB6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		75C27F34232D18C300888DB6 /* FoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodList.swift; sourceTree = "<group>"; };
+		75C27F37232D1AE000888DB6 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		75C27F17232CFB1400888DB6 /* Foodzilla */ = {
 			isa = PBXGroup;
 			children = (
+				75C27F33232D18AD00888DB6 /* Helpers */,
 				75C27F30232D16E200888DB6 /* Enums */,
 				75C27F2F232D16D900888DB6 /* Extensions */,
 				75C27F2E232D16D100888DB6 /* Model */,
@@ -84,6 +89,7 @@
 		75C27F2D232D16C300888DB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				75C27F37232D1AE000888DB6 /* ItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +114,14 @@
 			children = (
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		75C27F33232D18AD00888DB6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				75C27F34232D18C300888DB6 /* FoodList.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,8 +197,10 @@
 			files = (
 				75C27F32232D17CE00888DB6 /* Item.swift in Sources */,
 				75C27F1B232CFB1400888DB6 /* StorefrontVC.swift in Sources */,
+				75C27F38232D1AE000888DB6 /* ItemCell.swift in Sources */,
 				75C27F2C232D0B0C00888DB6 /* DetailsVC.swift in Sources */,
 				75C27F19232CFB1400888DB6 /* AppDelegate.swift in Sources */,
+				75C27F35232D18C300888DB6 /* FoodList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
