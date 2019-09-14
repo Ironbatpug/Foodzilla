@@ -9,6 +9,6 @@
 import Foundation
 
 enum Products: Int{
-    case meal = 0
-    case hideAds = 1
+    case hideAds = 0
+    case meal = 1
 }

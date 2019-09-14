@@ -22,6 +22,8 @@ class IAPService: NSObject, SKProductsRequestDelegate {
     var productIDs = Set<String>()
     var produtRequest = SKProductsRequest()
     
+    var nonConsumablePurchaseWasMade = UserDefaults.standard.bool(forKey: "nonConsumablePurchaseWasMade")
+    
     override init() {
         super.init()
         SKPaymentQueue.default().add(self)
@@ -33,7 +35,10 @@ class IAPService: NSObject, SKProductsRequestDelegate {
     }
     
     func productIdToStringSet(){
-        productIDs.insert(IAP_MEAL_ID)
+        let ids = [IAP_HIDE_ADS_ID, IAP_MEAL_ID]
+        for id in productIds {
+            productIDs.insert(ids)
+        }
     }
     
     func requestProducts(forIds ids: Set<String>) {
@@ -66,6 +71,7 @@ extension IAPService: SKPaymentTransactionObserver {
             switch transaction.transactionState {
             case .purchased:
                 SKPaymentQueue.default().finishTransaction(transaction)
+                complete(transaction:  transaction)
                 sendNoticationFor(status: .purchased, withIdentifier: transaction.payment.productIdentifier)
                 break
             case .restored:
@@ -79,6 +85,22 @@ extension IAPService: SKPaymentTransactionObserver {
                 break
             }
         }
+    }
+    
+    func complete(transaction: SKPaymentTransaction) {
+        switch transaction.payment.productIdentifier {
+        case IAP_MEAL_ID:
+            break
+        case IAP_HIDE_ADS_ID:
+            setNonConsumablePurchase(true)
+            break
+        default:
+            break
+        }
+    }
+    
+    func setNonConsumablePurchase(_ status: Bool){
+        UserDefaults.standard.set(status, value(forKey: "nonConsumablePurchaseWasMade"))
     }
     
     func sendNoticationFor(status: PurchaseStatus, withIdentifier identifier: String?){

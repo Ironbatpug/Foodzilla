@@ -17,9 +17,15 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var hideAdsBtn: UIButton!
     
     public private(set) var item: Item!
+    private var hiddenStatus: Bool = UserDefaults.standard.bool(forKey: "nonConsumablePurchaseWasMade")
     
     func initData(forItem item: Item) {
         self.item = item
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showOrHideADs()
     }
     
     override func viewDidLoad() {
@@ -45,9 +51,9 @@ class DetailsVC: UIViewController {
         switch productID {
         case IAP_MEAL_ID:
             buyItemBtn.isEnabled = true
-            break
         case IAP_HIDE_ADS_ID:
-            break
+            uglyAdView.isHidden = hiddenStatus
+            hideAdsBtn.isHidden = hiddenStatus
         default:
             break
         }
@@ -65,10 +71,16 @@ class DetailsVC: UIViewController {
     }
     
     @IBAction func hideAdsBtnWasPressed(_ sender: Any) {
+        IAPService.instance.attemptPruchaseForItemWith(productIndex: .hideAds)
     }
     
     @IBAction func closeBtnWasPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func showOrHideADs(){
+        uglyAdView.isHidden = hiddenStatus
+        hideAdsBtn.isHidden = hiddenStatus
     }
     
 }
