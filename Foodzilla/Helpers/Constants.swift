@@ -9,7 +9,7 @@
 import Foundation
 
 let IAP_MEAL_ID = "mealid"
-let IAP_HID_ADS_ID = "hideadsid"
+let IAP_HIDE_ADS_ID = "hideadsid"
 
 let IAPServicePurchaseNotification = "IAPServicePurchaseNotification"
 let IAPServiceRestoreNotification = "IAPServiceRestoreNotification"

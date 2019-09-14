@@ -22,6 +22,11 @@ class IAPService: NSObject, SKProductsRequestDelegate {
     var productIDs = Set<String>()
     var produtRequest = SKProductsRequest()
     
+    override init() {
+        super.init()
+        SKPaymentQueue.default().add(self)
+    }
+    
     func loadProducts() {
         productIdToStringSet()
         requestProducts(forIds: productIDs)
@@ -61,16 +66,29 @@ extension IAPService: SKPaymentTransactionObserver {
             switch transaction.transactionState {
             case .purchased:
                 SKPaymentQueue.default().finishTransaction(transaction)
+                sendNoticationFor(status: .purchased, withIdentifier: transaction.payment.productIdentifier)
                 break
             case .restored:
                 break
             case .failed:
-                break
+                SKPaymentQueue.default().finishTransaction(transaction)
+                sendNoticationFor(status: .failed, withIdentifier: nil)
             case .deferred:
                 break
             case .purchasing:
                 break
             }
+        }
+    }
+    
+    func sendNoticationFor(status: PurchaseStatus, withIdentifier identifier: String?){
+        switch status {
+        case .purchased:
+            NotificationCenter.default.post(name: NSNotification.Name(IAPServicePurchaseNotification), object: identifier)
+        case .restored:
+            NotificationCenter.default.post(name: NSNotification.Name(IAPServiceRestoreNotification), object: nil)
+        case .failed:
+            NotificationCenter.default.post(name: NSNotification.Name(IAPServiceFailureNotification), object: nil)
         }
     }
 }

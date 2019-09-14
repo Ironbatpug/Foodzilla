@@ -11,5 +11,5 @@ import Foundation
 enum PurchaseStatus {
     case purchased
     case restored
-    case feiled
+    case failed
 }
