@@ -63,6 +63,10 @@ class IAPService: NSObject, SKProductsRequestDelegate {
         let payment = SKPayment(product: product)
         SKPaymentQueue.default().add(payment)
     }
+    
+    func restorePurchases() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
 }
 
 extension IAPService: SKPaymentTransactionObserver {
@@ -75,6 +79,7 @@ extension IAPService: SKPaymentTransactionObserver {
                 sendNoticationFor(status: .purchased, withIdentifier: transaction.payment.productIdentifier)
                 break
             case .restored:
+                SKPaymentQueue.default().finishTransaction(transaction)
                 break
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transaction)
@@ -85,6 +90,11 @@ extension IAPService: SKPaymentTransactionObserver {
                 break
             }
         }
+    }
+    
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        sendNoticationFor(status: .restored, withIdentifier: nil)
+        setNonConsumablePurchase(true)
     }
     
     func complete(transaction: SKPaymentTransaction) {
